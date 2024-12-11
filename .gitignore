@@ -1,92 +1,38 @@
-# Logs
-*.log
-*.log.*
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# Dependency directories
+# dependencies
 node_modules/
-bower_components/
 
-# React Native
-android/
-ios/
-web-build/
-build/
+# Expo
 .expo/
-.expo-shared/
-
-# Babel & Metro
-.cache/
-babel.config.js/*
-metro.config.js/*
-jest.config.js
-
-# Gradle
-.gradle/
-!gradle/wrapper/gradle-wrapper.jar
-build/
-*.lock
-
-# MacOS
-.DS_Store
-
-# Certificates
-*.pem
-*.crt
-*.key
-
-# Env files
-.env
-.env.*.local
-
-# Miscellaneous
-.vscode/
-.idea/
-*.iml
-*.swp
-*.swo
-*.swn
-*.tmp
-*.temp
-*.obj
-*.o
-
-# Xcode files
-*.xcuserdatad
-*.xcuserdata
-*.xcworkspace
-*.xcbuild/
-*.xccheckout
-*.pbxuser
-*.mode1v3
-*.mode2v3
-
-# Android Studio
-*.keystore
-*.jks
-*.apk
-output.json
-
-# NPM and Yarn artifacts
-package-lock.json
-yarn.lock
-
-# Prettier and ESLint caches
-.prettiercache
-eslintcache
-
-# Testing
-coverage/
-*.test.js
-*.test.ts
-*.spec.js
-*.spec.ts
-
-# Expo-specific
+dist/
 web-build/
-*.tflite
-*.pdb
-*.so
-*.a
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+app-example
