@@ -1,4 +1,6 @@
 import React from 'react';
-export default function MessagesPage() {
+const MessagesPage: React.FC = () => {
   return <></>;
-}
+};
+
+export default MessagesPage;

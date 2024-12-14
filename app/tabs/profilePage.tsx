@@ -1,4 +1,6 @@
 import React from 'react';
-export default function ProfilePage() {
+const ProfilePage: React.FC = () => {
   return <></>;
-}
+};
+
+export default ProfilePage;

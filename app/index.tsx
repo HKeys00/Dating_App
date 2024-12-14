@@ -1,4 +1,11 @@
+import Page from '@/pages/page';
 import React from 'react';
-export default function FeedPage() {
-  return <></>;
-}
+const FeedPage: React.FC = () => {
+  return (
+    <Page title="Feed">
+      <></>
+    </Page>
+  );
+};
+
+export default FeedPage;

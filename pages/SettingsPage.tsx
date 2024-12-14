@@ -1,4 +1,6 @@
 import React from 'react';
-export default function SettingsPage() {
+const SettingsPage: React.FC = () => {
   return <></>;
-}
+};
+
+export default SettingsPage;

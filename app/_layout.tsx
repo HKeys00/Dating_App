@@ -1,13 +1,16 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
+import TabBar from '@/components/tabBar/tabBar';
 
-export default function TabLayout() {
+const TabLayout: React.FC = () => {
   return (
-    <Tabs>
-      <Tabs.Screen name="tabs/matchesPage" options={{ title: 'Matches' }} />
-      <Tabs.Screen name="tabs/messagesPage" options={{ title: 'Messages' }} />
-      <Tabs.Screen name="index" options={{ title: 'Feed' }} />
-      <Tabs.Screen name="tabs/profilePage" options={{ title: 'Profile' }} />
+    <Tabs tabBar={(props) => <TabBar {...props} />}>
+      <Tabs.Screen name="tabs/matchesPage" options={{ title: 'Matches', headerShown: false }} />
+      <Tabs.Screen name="tabs/messagesPage" options={{ title: 'Messages', headerShown: false }} />
+      <Tabs.Screen name="index" options={{ title: 'Feed', headerShown: false }} />
+      <Tabs.Screen name="tabs/profilePage" options={{ title: 'Profile', headerShown: false }} />
     </Tabs>
   );
-}
+};
+
+export default TabLayout;

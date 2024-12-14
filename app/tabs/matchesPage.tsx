@@ -1,4 +1,7 @@
 import React from 'react';
-export default function MatchesPage() {
+
+const MatchesPage: React.FC = () => {
   return <></>;
-}
+};
+
+export default MatchesPage;
