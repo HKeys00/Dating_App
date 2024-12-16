@@ -19,10 +19,18 @@ const TabBar = ({ state, descriptors, navigation, insets }: BottomTabBarProps) =
           return null;
         }
 
-        console.log(route.key);
         const { options } = descriptors[route.key];
         const isFocused = state.index === index;
-        return <TabBarButton isFocused={isFocused} image={options.title ?? ''} options={options} route={route} onNavigation={() => onNavigation(route)} />;
+        return (
+          <TabBarButton
+            key={options.title}
+            isFocused={isFocused}
+            image={options.title ?? ''}
+            options={options}
+            route={route}
+            onNavigation={() => onNavigation(route)}
+          />
+        );
       })}
     </View>
   );

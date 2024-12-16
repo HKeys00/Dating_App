@@ -3,7 +3,8 @@ import { PlatformPressable } from '@react-navigation/elements';
 import { NavigationRoute, ParamListBase } from '@react-navigation/native';
 import { useLinkBuilder } from '@react-navigation/native';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { Image, Text } from 'react-native';
+import { View, Image, Text, GestureResponderEvent } from 'react-native';
+import tabBarStyle from '@/styles/tabs/tabBarStyle';
 
 /**
  * The tab bar button component.
@@ -18,7 +19,8 @@ interface TabBarButtonProps {
 
 const TabBarButton: React.FC<TabBarButtonProps> = ({ isFocused, image, route, options, onNavigation }: TabBarButtonProps) => {
   const { buildHref } = useLinkBuilder();
-  const onPress = () => {
+  const onPress = (event: GestureResponderEvent) => {
+    event.preventDefault();
     if (!isFocused) {
       onNavigation(route);
     }
@@ -30,10 +32,10 @@ const TabBarButton: React.FC<TabBarButtonProps> = ({ isFocused, image, route, op
       accessibilityLabel={options.tabBarAccessibilityLabel}
       testID={options.tabBarButtonTestID}
       onPress={onPress}
-      style={{ flex: 1 }}
+      style={tabBarStyle.tabBarButton}
     >
-      <Image src={`${image}${isFocused ? `_focused` : ''}.png`}></Image>
-      <Text>{image}</Text>
+      <Image style={tabBarStyle.tabBarButtonIcon} source={require('../../assets/tabIcons/home.png')}></Image>
+      {/* <Image src={`${image}${isFocused ? `_focused` : ''}.png`}></Image> */}
     </PlatformPressable>
   );
 };

@@ -1,17 +1,28 @@
+import TabBarButton from '@/components/tabBar/tabBarButton';
 import { StyleSheet } from 'react-native';
 
 const tabBarStyle = StyleSheet.create({
   tabBar: {
-    display: 'flex',
-    flexDirection: 'row',
     position: 'absolute',
+    backgroundColor: '#F4DEC1',
     bottom: 0,
     left: 0,
-    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
     height: '5%',
-    minHeight: 50,
-
-    backgroundColor: '#F4DEC1',
+    width: '100%',
+  },
+  tabBarButton: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    width: '25%',
+  },
+  tabBarButtonIcon: {
+    height: '100%',
+    width: '100%',
+    objectFit: 'contain',
   },
 });
 
