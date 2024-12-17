@@ -17,7 +17,7 @@ const tabBarStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-    width: '25%',
+    width: '20%',
   },
   tabBarButtonIcon: {
     height: '100%',

@@ -1,10 +1,14 @@
 import Page from '@/pages/page';
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 const FeedPage: React.FC = () => {
   return (
-    <Page title="Feed">
-      <></>
-    </Page>
+    <>
+      <StatusBar backgroundColor="#F4DEC1" />
+      <Page>
+        <></>
+      </Page>
+    </>
   );
 };
 

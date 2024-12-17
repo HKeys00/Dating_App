@@ -5,6 +5,7 @@ import { useLinkBuilder } from '@react-navigation/native';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { View, Image, Text, GestureResponderEvent } from 'react-native';
 import tabBarStyle from '@/styles/tabs/tabBarStyle';
+import getTabBarIcon from './tabBarIconHelper';
 
 /**
  * The tab bar button component.
@@ -33,9 +34,9 @@ const TabBarButton: React.FC<TabBarButtonProps> = ({ isFocused, image, route, op
       testID={options.tabBarButtonTestID}
       onPress={onPress}
       style={tabBarStyle.tabBarButton}
+      android_ripple={{ color: 'transparent', radius: 0 }}
     >
-      <Image style={tabBarStyle.tabBarButtonIcon} source={require('../../assets/tabIcons/home.png')}></Image>
-      {/* <Image src={`${image}${isFocused ? `_focused` : ''}.png`}></Image> */}
+      <Image style={tabBarStyle.tabBarButtonIcon} source={getTabBarIcon(image)}></Image>
     </PlatformPressable>
   );
 };

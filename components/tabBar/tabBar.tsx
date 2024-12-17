@@ -21,6 +21,7 @@ const TabBar = ({ state, descriptors, navigation, insets }: BottomTabBarProps) =
 
         const { options } = descriptors[route.key];
         const isFocused = state.index === index;
+        console.log(options.title);
         return (
           <TabBarButton
             key={options.title}
