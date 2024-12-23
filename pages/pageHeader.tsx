@@ -14,7 +14,8 @@ interface PageProps {
 const Page: React.FC<PageProps> = ({ title, children }: PageProps) => {
   return (
     <View style={pageTheme.pageHeader}>
-      <Text>{title}</Text>
+      <Text style={pageTheme.headerText}>{title}</Text>
+      <View style={pageTheme.headerLineBreak} />
       <View>{children}</View>
     </View>
   );
