@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Page from '@/pages/page';
-import { Text, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import ChatPreview from '@/components/messages/chatPreview';
 import ChatPreviewType from '../../interfaces/messaging/chatPreviewType';
@@ -23,22 +23,26 @@ const MessagesPage: React.FC = () => {
         <></>
       </PageHeader>
       <PageBody>
-        <View style={messagePageTheme.scrollableContainer}>
-          {chatPreviews.map((preview, index) => {
-            return (
-              <ChatPreview
-                key={preview.chatId}
-                message={preview.lastMessage}
-                firstName={preview.participantFirstName}
-                lastName={preview.participantLastName}
-                previewImage={preview.participantPreviewImage}
-                timestamp={preview.lastMessageTimestamp}
-                read={false}
-                onPress={() => {}}
-                zIndex={chatPreviews.length - index}
-              />
-            );
-          })}
+        <View style={messagePageTheme.scrollContainer}>
+          <ScrollView contentContainerStyle={messagePageTheme.scrollableContainer}>
+            {chatPreviews.map((preview, index) => {
+              return (
+                <ChatPreview
+                  key={preview.chatId}
+                  message={preview.lastMessage}
+                  firstName={preview.participantFirstName}
+                  lastName={preview.participantLastName}
+                  previewImage={preview.participantPreviewImage}
+                  timestamp={preview.lastMessageTimestamp}
+                  read={false}
+                  intent={preview.intent}
+                  zIndex={chatPreviews.length - index}
+                  order={index}
+                  onPress={() => {}}
+                />
+              );
+            })}
+          </ScrollView>
         </View>
       </PageBody>
     </Page>

@@ -4,6 +4,7 @@ type ChatPreviewType = {
   lastMessageTimestamp: string;
   participantFirstName: string;
   participantLastName: string;
+  intent: string;
   participantPreviewImage: string;
 };
 

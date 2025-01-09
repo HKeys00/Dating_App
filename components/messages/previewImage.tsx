@@ -1,6 +1,6 @@
 import messagePageTheme from '@/styles/pages/messagePage/messagePageTheme';
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 
 /**
  * The chat preview component.
@@ -11,7 +11,11 @@ interface PreviewImageProps {
 }
 
 const PreviewImage: React.FC<PreviewImageProps> = ({ image, intent }: PreviewImageProps) => {
-  return <View></View>;
+  return (
+    <View style={[messagePageTheme.imageContainer, { borderColor: intent === 'casual' ? '#FF0004' : '#2B6EFF' }]}>
+      <Image source={{ uri: image }} style={messagePageTheme.image}></Image>
+    </View>
+  );
 };
 
 export default PreviewImage;
