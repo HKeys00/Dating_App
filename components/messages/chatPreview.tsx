@@ -1,7 +1,9 @@
 import messagePageTheme from '@/styles/pages/messagePage/messagePageTheme';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
+import ReanimatedSwipeable from 'react-native-gesture-handler/ReanimatedSwipeable';
 import PreviewImage from './previewImage';
+import ChatPreviewActionButton from './chatActionButton';
 
 /**
  * The chat preview component.
@@ -32,29 +34,45 @@ const ChatPreview: React.FC<ChatPreviewProps> = ({
   onPress,
 }: ChatPreviewProps) => {
   return (
-    <View
-      style={[
-        order == 0 ? messagePageTheme.previewContainerFirst : messagePageTheme.previewContainerOther,
+    <ReanimatedSwipeable
+      friction={2}
+      rightThreshold={-60}
+      overshootRight={false}
+      containerStyle={[
+        order == 0 ? messagePageTheme.swipeableContainerFirst : messagePageTheme.swipeableContainerOther,
         { zIndex: zIndex, elevation: zIndex },
-        messagePageTheme.previewContainer,
+        messagePageTheme.swipeableContainer,
       ]}
+      renderRightActions={() => renderRightActions(order)} // Right swipe action
     >
-      <View style={messagePageTheme.imageSegment}>
-        <PreviewImage image={previewImage} intent={intent} />
-      </View>
-      <View style={messagePageTheme.textSegment}>
-        <View style={messagePageTheme.nameContainer}>
-          <Text style={messagePageTheme.name}>{firstName}</Text>
+      <View style={messagePageTheme.previewContainer}>
+        <View style={messagePageTheme.imageSegment}>
+          <PreviewImage image={previewImage} intent={intent} />
         </View>
-        <View style={messagePageTheme.lastMessageContainer}>
-          <Text style={messagePageTheme.lastMessage}>{message}</Text>
+        <View style={messagePageTheme.textSegment}>
+          <View style={messagePageTheme.nameContainer}>
+            <Text style={messagePageTheme.name}>{firstName}</Text>
+          </View>
+          <View style={messagePageTheme.lastMessageContainer}>
+            <Text style={messagePageTheme.lastMessage}>{message}</Text>
+          </View>
+        </View>
+        <View style={messagePageTheme.timeStampSegment}>
+          <View style={messagePageTheme.timeStampContainer}>
+            <Text style={messagePageTheme.timeStamp}>{timeAgo(timestamp)}</Text>
+          </View>
         </View>
       </View>
-      <View style={messagePageTheme.timeStampSegment}>
-        <View style={messagePageTheme.timeStampContainer}>
-          <Text style={messagePageTheme.timeStamp}>{timeAgo(timestamp)}</Text>
-        </View>
-      </View>
+    </ReanimatedSwipeable>
+  );
+};
+
+const renderRightActions = (order: number) => {
+  return (
+    <View style={[messagePageTheme.actionContainer, order !== 0 ? { paddingTop: 20 } : {}]}>
+      <ChatPreviewActionButton name="Pin" firstButton={true} action={() => {}} />
+      <ChatPreviewActionButton name="Report" action={() => {}} />
+      <ChatPreviewActionButton name="Unmatch" action={() => {}} />
     </View>
   );
 };
