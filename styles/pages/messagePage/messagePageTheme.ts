@@ -17,6 +17,21 @@ const messagePageTheme = StyleSheet.create({
     width: wp(100),
     paddingTop: hp(8),
   },
+  buttonContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: hp(10),
+    gap: 5,
+  },
+  hiddenButtonText: {
+    fontWeight: 'bold',
+  },
+  hiddenButtonImage: {
+    height: hp(4),
+    width: wp(6),
+  },
   swipeableContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -125,7 +140,10 @@ const messagePageTheme = StyleSheet.create({
   },
   actionButtonImage: {
     height: hp(5),
-    width: wp(10),
+    width: wp(5),
+  },
+  actionButtonText: {
+    fontWeight: 'bold',
   },
 });
 

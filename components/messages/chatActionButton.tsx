@@ -15,7 +15,7 @@ interface ChatActionButtonProps {
 const ChatActionButton: React.FC<ChatActionButtonProps> = ({ name, firstButton, action }) => {
   return (
     <TouchableOpacity style={[messagePageTheme.actionButton, firstButton ? { borderLeftWidth: 0 } : {}]}>
-      <Text>{name}</Text>
+      <Text style={messagePageTheme.actionButtonText}>{name}</Text>
       <Image style={messagePageTheme.actionButtonImage} source={getActionButtonIcon(name)} />
     </TouchableOpacity>
   );
