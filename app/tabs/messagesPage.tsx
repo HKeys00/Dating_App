@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Page from '@/pages/page';
+import Page from '@/app/pages/base/page';
 import { ScrollView, View, Image, Text, Pressable } from 'react-native';
+import { useRouter } from 'expo-router';
 import ChatPreview from '@/components/messages/chatPreview';
-import ChatPreviewType from '../../interfaces/messaging/chatPreviewType';
+import ChatPreviewType from '../../types/messaging/chatPreviewType';
 import dummyChatPreviews from '../../data/chatPreviewData.json';
-import messagePageTheme from '@/styles/pages/messagePage/messagePageTheme';
-import PageHeader from '@/pages/pageHeader';
-import PageBody from '@/pages/pageBody';
+import messagePageTheme from '@/styles/pages/messagePageTheme';
+import PageHeader from '@/app/pages/base/pageHeader';
+import PageBody from '@/app/pages/base/pageBody';
 import IconHidden from '../../assets/messagesPage/hidden.png';
 
 const MessagesPage: React.FC = () => {
   const [chatPreviews, setChatPreviews] = useState<ChatPreviewType[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setChatPreviews(dummyChatPreviews.chatPreviews);
@@ -37,16 +39,18 @@ const MessagesPage: React.FC = () => {
                   intent={preview.intent}
                   zIndex={chatPreviews.length - index}
                   order={index}
-                  onPress={() => {}}
+                  onPress={() => {
+                    router.push(`../pages/chatPage?chatId=${preview.chatId}`, {});
+                  }}
                 />
               );
             })}
           </ScrollView>
         </View>
-        <View>
-          <Pressable onPress={() => {}} style={messagePageTheme.buttonContainer}>
-            <Image style={messagePageTheme.hiddenButtonImage} source={IconHidden} />
+        <View style={messagePageTheme.buttonContainer}>
+          <Pressable onPress={() => {}} style={messagePageTheme.hiddenContainer}>
             <Text style={messagePageTheme.hiddenButtonText}>Hidden</Text>
+            <Image style={messagePageTheme.hiddenButtonImage} source={IconHidden} />
           </Pressable>
         </View>
       </PageBody>

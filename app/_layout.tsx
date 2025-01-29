@@ -1,20 +1,17 @@
 import React from 'react';
+import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Tabs } from 'expo-router';
-import TabBar from '@/components/tabBar/tabBar';
 
-const TabLayout: React.FC = () => {
+const RootLayout: React.FC = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Tabs tabBar={(props) => <TabBar {...props} />}>
-        <Tabs.Screen name="index" options={{ title: 'Feed', headerShown: false }} />
-        <Tabs.Screen name="tabs/matchesPage" options={{ title: 'Matches', headerShown: false, headerPressColor: 'transparent' }} />
-        <Tabs.Screen name="tabs/spotlightPage" options={{ title: 'Spotlight', headerShown: false }} />
-        <Tabs.Screen name="tabs/messagesPage" options={{ title: 'Messages', headerShown: false }} />
-        <Tabs.Screen name="tabs/profilePage" options={{ title: 'Profile', headerShown: false }} />
-      </Tabs>
+      <Stack>
+        {/* This will render your Tab Navigator as a screen in the Stack */}
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="tabs" options={{ headerShown: false }} />
+      </Stack>
     </GestureHandlerRootView>
   );
 };
 
-export default TabLayout;
+export default RootLayout;

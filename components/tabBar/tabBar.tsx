@@ -6,7 +6,7 @@ import { NavigationRoute, ParamListBase } from '@react-navigation/native';
 import tabBarStyle from '@/styles/tabs/tabBarStyle';
 
 const TabBar = ({ state, descriptors, navigation, insets }: BottomTabBarProps) => {
-  const exclude = ['_sitemap', '+not-found'];
+  const exclude = ['_sitemap', '+not-found', 'pages'];
 
   const onNavigation = (route: NavigationRoute<ParamListBase, string>) => {
     navigation.navigate(route.name, route.params);

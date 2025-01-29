@@ -1,4 +1,4 @@
-import messagePageTheme from '@/styles/pages/messagePage/messagePageTheme';
+import messagePageTheme from '@/styles/pages/messagePageTheme';
 import React from 'react';
 import { View, Image } from 'react-native';
 

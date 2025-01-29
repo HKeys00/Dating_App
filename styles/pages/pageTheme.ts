@@ -24,8 +24,8 @@ const pageTheme = StyleSheet.create({
   },
   headerText: {
     fontSize: wp(10),
-    fontWeight: 'bold',
     color: '#000000',
+    fontFamily: 'Acme',
   },
   headerLineBreak: {
     width: wp(70),
