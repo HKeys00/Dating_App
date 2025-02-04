@@ -1,4 +1,4 @@
-import messagePageTheme from '@/styles/pages/messagePage/messagePageTheme';
+import messagePageTheme from '@/styles/pages/messagePageTheme';
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import ReanimatedSwipeable from 'react-native-gesture-handler/ReanimatedSwipeable';
@@ -43,9 +43,9 @@ const ChatPreview: React.FC<ChatPreviewProps> = ({
         { zIndex: zIndex, elevation: zIndex },
         messagePageTheme.swipeableContainer,
       ]}
-      renderRightActions={() => renderRightActions(order)} // Right swipe action
+      renderRightActions={() => renderRightActions(order)}
     >
-      <View style={messagePageTheme.previewContainer}>
+      <View style={messagePageTheme.previewContainer} onTouchEnd={onPress}>
         <View style={messagePageTheme.imageSegment}>
           <PreviewImage image={previewImage} intent={intent} />
         </View>

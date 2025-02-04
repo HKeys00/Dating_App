@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Image, TouchableOpacity } from 'react-native';
 import getActionButtonIcon from '../messages/chatActionButtonIconHelper';
-import messagePageTheme from '@/styles/pages/messagePage/messagePageTheme';
+import messagePageTheme from '@/styles/pages/messagePageTheme';
 
 /**
  * The chat action button component.

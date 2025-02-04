@@ -18,19 +18,30 @@ const messagePageTheme = StyleSheet.create({
     paddingTop: hp(8),
   },
   buttonContainer: {
+    height: hp(10),
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: hp(10),
-    gap: 5,
+  },
+  hiddenContainer: {
+    width: wp(35),
+    gap: wp(3),
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#000000',
+    borderBottomWidth: 2,
+    paddingHorizontal: wp(3),
   },
   hiddenButtonText: {
-    fontWeight: 'bold',
+    fontFamily: 'Acme',
+    fontSize: wp(6),
   },
   hiddenButtonImage: {
     height: hp(4),
-    width: wp(6),
+    width: wp(9),
   },
   swipeableContainer: {
     display: 'flex',
@@ -93,8 +104,8 @@ const messagePageTheme = StyleSheet.create({
   },
   nameContainer: {},
   name: {
-    fontSize: wp(5),
-    fontWeight: 'bold',
+    fontSize: wp(6),
+    fontFamily: 'Acme',
   },
   lastMessageContainer: {
     paddingTop: hp(1),
@@ -105,6 +116,7 @@ const messagePageTheme = StyleSheet.create({
     color: '#000000',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    fontFamily: 'Acme',
   },
   timeStampSegment: {
     width: wp(24),
@@ -137,12 +149,14 @@ const messagePageTheme = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderLeftWidth: wp(0.5),
+    gap: wp(1),
   },
   actionButtonImage: {
-    height: hp(5),
-    width: wp(5),
+    height: hp(2.5),
+    width: wp(5.5),
   },
   actionButtonText: {
+    fontSize: wp(3),
     fontWeight: 'bold',
   },
 });

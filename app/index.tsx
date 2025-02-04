@@ -1,15 +1,10 @@
-import Page from '@/pages/page';
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-const FeedPage: React.FC = () => {
-  return (
-    <>
-      <StatusBar backgroundColor="#F4DEC1" />
-      <Page>
-        <></>
-      </Page>
-    </>
-  );
+import { Redirect } from 'expo-router';
+import FeedPage from './tabs';
+
+// This will automatically redirect to your tabs layout
+const IndexPage: React.FC = () => {
+  return <Redirect href={'/tabs'} />;
 };
 
-export default FeedPage;
+export default IndexPage;
