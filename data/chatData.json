@@ -1,4 +1,53 @@
 {
   "chatId": 1,
-  "messages": []
+  "messages": [
+    {
+      "id": 1,
+      "senderId": 1,
+      "message": "Hey, how's it going?",
+      "timestamp": "2025-01-29T08:30:00Z"
+    },
+    {
+      "id": 2,
+      "senderId": 2,
+      "message": "I'm good, thanks for asking! What about you?",
+      "timestamp": "2025-01-29T08:32:00Z"
+    },
+    {
+      "id": 3,
+      "senderId": 1,
+      "message": "I'm doing well, just catching up on some work.",
+      "timestamp": "2025-01-29T08:33:30Z"
+    },
+    {
+      "id": 4,
+      "senderId": 2,
+      "message": "Nice! I'm just taking a break. Do you want to grab lunch later?",
+      "timestamp": "2025-01-29T08:35:00Z"
+    },
+    {
+      "id": 5,
+      "senderId": 1,
+      "message": "That sounds good! What time?",
+      "timestamp": "2025-01-29T08:37:30Z"
+    },
+    {
+      "id": 6,
+      "senderId": 2,
+      "message": "How about 12 PM?",
+      "timestamp": "2025-01-29T08:39:00Z"
+    },
+    {
+      "id": 7,
+      "senderId": 1,
+      "message": "Perfect, see you then!",
+      "timestamp": "2025-01-29T08:40:30Z"
+    },
+    {
+      "id": 8,
+      "senderId": 2,
+      "message": "Great! Looking forward to it.",
+      "timestamp": "2025-01-29T08:42:00Z"
+    }
+  ]
 }
