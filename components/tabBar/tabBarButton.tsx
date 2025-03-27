@@ -3,9 +3,9 @@ import { PlatformPressable } from '@react-navigation/elements';
 import { NavigationRoute, ParamListBase } from '@react-navigation/native';
 import { useLinkBuilder } from '@react-navigation/native';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { View, Image, Text, GestureResponderEvent } from 'react-native';
-import tabBarStyle from '@/styles/tabs/tabBarStyle';
-import getTabBarIcon from './tabBarIconHelper';
+import { Image, GestureResponderEvent } from 'react-native';
+import tabBarStyle from './styles/tabBar';
+import getTabBarIcon from './helper/tabBarIconHelper';
 
 /**
  * The tab bar button component.

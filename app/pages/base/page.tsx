@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import pageTheme from '@/styles/pages/pageTheme';
+import pageTheme from '@/app/pages/base/styles/pageTheme';
 import coreTheme from '@/styles/coreTheme';
 
 /**

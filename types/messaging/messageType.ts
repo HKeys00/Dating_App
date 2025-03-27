@@ -1,5 +1,5 @@
 type MessageType = {
-  id: number;
+  id: string;
   senderId: number;
   message: string;
   timestamp: string;
