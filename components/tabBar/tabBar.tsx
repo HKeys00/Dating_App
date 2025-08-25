@@ -3,7 +3,7 @@ import TabBarButton from './tabBarButton';
 import { View } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { NavigationRoute, ParamListBase } from '@react-navigation/native';
-import tabBarStyle from '@/styles/tabs/tabBarStyle';
+import tabBarStyle from '@/components/tabBar/styles/tabBar';
 
 const TabBar = ({ state, descriptors, navigation, insets }: BottomTabBarProps) => {
   const exclude = ['_sitemap', '+not-found', 'pages'];
@@ -21,6 +21,11 @@ const TabBar = ({ state, descriptors, navigation, insets }: BottomTabBarProps) =
 
         const { options } = descriptors[route.key];
         const isFocused = state.index === index;
+
+        if (options.title === undefined) {
+          return null;
+        }
+
         return (
           <TabBarButton
             key={options.title}
